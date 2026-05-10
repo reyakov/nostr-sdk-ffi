@@ -52,7 +52,7 @@ dependencies {
     testImplementation("ch.qos.logback:logback-core:1.2.3")
 }
 
-val version: String = "0.44.2"
+val version: String = "0.2"
 val isSnapshot: Boolean = version.contains("SNAPSHOT")
 
 mavenPublishing {
@@ -65,7 +65,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates("org.rust-nostr", "nostr-sdk-jvm", version)
+    coordinates("su.reya", "nostr-sdk-jvm", version)
 
     pom {
       name.set("nostr-sdk-jvm")
