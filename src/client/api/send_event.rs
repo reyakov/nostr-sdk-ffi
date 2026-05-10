@@ -67,10 +67,11 @@ pub struct AckPolicy {
     inner: client::AckPolicy,
 }
 
+#[uniffi::export]
 impl AckPolicy {
     /// Wait for relay `OK` acknowledgement from each selected relay (default).
-    #[inline]
-    pub const fn all() -> Self {
+    #[uniffi::constructor]
+    pub fn all() -> Self {
         Self {
             inner: client::AckPolicy::all(),
         }
@@ -80,8 +81,8 @@ impl AckPolicy {
     ///
     /// The operation still sends to all selected relays, but each relay result
     /// is reported immediately after dispatch.
-    #[inline]
-    pub const fn none() -> Self {
+    #[uniffi::constructor]
+    pub fn none() -> Self {
         Self {
             inner: client::AckPolicy::none(),
         }
