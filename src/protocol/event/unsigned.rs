@@ -120,6 +120,16 @@ impl UnsignedEvent {
         Ok(Event::from(self.inner.clone().add_signature(sig)?))
     }
 
+    /// Compute event ID for unsigned event
+    ///
+    /// Returns a new `UnsignedEvent` with the computed ID.
+    pub fn ensure_id(&self) -> UnsignedEvent {
+        let mut unsigned_event = self.inner.clone();
+        unsigned_event.ensure_id();
+
+        Self::from(unsigned_event)
+    }
+
     #[uniffi::constructor]
     pub fn from_json(json: String) -> Result<Self> {
         Ok(Self {
