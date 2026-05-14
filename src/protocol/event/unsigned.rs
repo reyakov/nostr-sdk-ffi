@@ -41,6 +41,14 @@ impl From<nostr::UnsignedEvent> for UnsignedEvent {
     }
 }
 
+impl From<nostr::Event> for UnsignedEvent {
+    fn from(inner: nostr::Event) -> Self {
+        Self {
+            inner: nostr::UnsignedEvent::from(inner),
+        }
+    }
+}
+
 #[uniffi::export(async_runtime = "tokio")]
 impl UnsignedEvent {
     pub fn id(&self) -> Option<Arc<EventId>> {

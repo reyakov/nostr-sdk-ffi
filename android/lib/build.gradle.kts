@@ -43,7 +43,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.1")
 }
 
-val version: String = "0.2.2"
+val version: String = "0.2.3"
 val isSnapshot: Boolean = version.contains("SNAPSHOT")
 
 mavenPublishing {
