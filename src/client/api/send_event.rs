@@ -62,7 +62,7 @@ impl SendEventTarget {
 ///
 /// This policy controls whether each relay send waits for an `OK` response
 /// after dispatching the `EVENT` message.
-#[uniffi::export]
+#[derive(uniffi::Object)]
 pub struct AckPolicy {
     inner: client::AckPolicy,
 }
