@@ -93,7 +93,7 @@ android {
     }
 }
 
-val version: String = "0.44.2"
+val version: String = "0.2.4"
 val isSnapshot: Boolean = version.contains("SNAPSHOT")
 
 mavenPublishing {
@@ -107,7 +107,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates("org.rust-nostr", "nostr-sdk-kmp", version)
+    coordinates("su.reya", "nostr-sdk-kmp", version)
 
     pom {
       name.set("nostr-sdk-kmp")
