@@ -111,6 +111,13 @@ impl UnsignedEvent {
         Ok(Event::from(self.inner.clone().add_signature(sig)?))
     }
 
+    /// Ensure the event has an `id` field set
+    pub fn ensure_id(&self) -> Result<Self> {
+        let mut unsigned = self.inner.clone();
+        unsigned.ensure_id();
+        Ok(unsigned.into())
+    }
+
     #[uniffi::constructor]
     pub fn from_json(json: String) -> Result<Self> {
         Ok(Self {
