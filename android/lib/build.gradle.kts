@@ -43,7 +43,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.7.1")
 }
 
-val version: String = "0.44.2"
+val version: String = "0.3"
 val isSnapshot: Boolean = version.contains("SNAPSHOT")
 
 mavenPublishing {
@@ -56,7 +56,7 @@ mavenPublishing {
 
     signAllPublications()
 
-    coordinates("org.rust-nostr", "nostr-sdk", version)
+    coordinates("su.reya", "nostr-sdk", version)
 
     pom {
       name.set("nostr-sdk")
